@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Change root path
+cd "$(dirname "$0")" || exit
+
+## run gs
+if [ -f ../lfocr/bin/gs ]; then
+  ../lfocr/bin/gs "$@"
+else
+  ../lib/python*/site-packages/lfocr/bin/gs "$@"
+fi
